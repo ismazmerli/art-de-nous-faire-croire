@@ -138,7 +138,7 @@ function show(id) {
   document.querySelectorAll('.screen').forEach(x => x.classList.toggle('on', x.id === id));
   window.scrollTo(0, 0);
   try {
-    if (id === 'resources') { localStorage.setItem('avis_done', '1'); history.replaceState(null, '', '#ressources'); }
+    if (id === 'resources') { localStorage.setItem('avis_done_art_croire', '1'); history.replaceState(null, '', '#ressources'); }
     else { history.replaceState(null, '', location.pathname); }
   } catch (e) {}
   if (id === 'nudge') lightStars();
@@ -154,7 +154,7 @@ document.querySelectorAll('.copy').forEach(b => b.onclick = async () => {
   b.textContent = 'Copié'; b.classList.add('ok'); setTimeout(() => { b.textContent = 'Copier'; b.classList.remove('ok'); }, 1600);
 });
 let start = 'nudge';
-try { if (location.hash === '#ressources' || localStorage.getItem('avis_done') === '1') start = 'resources'; } catch (e) {}
+try { if (location.hash === '#ressources' || localStorage.getItem('avis_done_art_croire') === '1') start = 'resources'; } catch (e) {}
 show(start);
 
 (function () {
